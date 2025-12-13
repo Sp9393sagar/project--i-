@@ -1,0 +1,69 @@
+### Variables
+@baseUrl = http://localhost:5000/api
+@token = your-jwt-token-here
+
+### Health Check
+GET http://localhost:5000/
+
+### Register User
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "Test User",
+  "email": "test@example.com",
+  "password": "password123",
+  "phone": "1234567890"
+}
+
+### Login User
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+### Report Lost Person (with auth)
+POST {{baseUrl}}/lost
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "age": 25,
+  "gender": "Male",
+  "lastSeenLocation": "Central Park",
+  "description": "Wearing blue jacket",
+  "contactNumber": "9876543210"
+}
+
+### Get All Lost Reports
+GET {{baseUrl}}/lost
+Authorization: Bearer {{token}}
+
+### Report Found Person
+POST {{baseUrl}}/found
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "age": 25,
+  "gender": "Male",
+  "foundLocation": "Central Park",
+  "description": "Wearing blue jacket",
+  "contactNumber": "9876543210"
+}
+
+### Get All Found Reports
+GET {{baseUrl}}/found
+Authorization: Bearer {{token}}
+
+### Get Matches
+GET {{baseUrl}}/match
+Authorization: Bearer {{token}}
+
+### Get All Users (Admin)
+GET {{baseUrl}}/admin/users
+Authorization: Bearer {{token}}
