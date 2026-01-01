@@ -13,7 +13,7 @@ export const extractFaceDescriptor = async (imagePathOrBuffer) => {
         // Placeholder: Return a random descriptor to simulate face detection
         // In production, call Face++ API or Azure Face API here
 
-        console.log('⚠️  Using placeholder face recognition. For production:');
+        console.log('  Using placeholder face recognition. For production:');
         console.log('   - Integrate Face++ API (https://www.faceplusplus.com/)');
         console.log('   - Or use Azure Face API (https://azure.microsoft.com/services/cognitive-services/face/)');
         console.log('   - Or setup face-api.js with proper canvas configuration');
